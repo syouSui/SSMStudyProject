@@ -6,8 +6,6 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
 		 	 http://www.springframework.org/schema/context
 			 http://www.springframework.org/schema/context/spring-context.xsd ">
-  <!--开启注解功能-->
-  <context:annotation-config/>
   <!--配置注解扫描，作用会自动扫描某包或子包下包含的@Compoent的类，并作为bean进行管理-->
   <context:component-scan base-package="com.syousui"/>
 
