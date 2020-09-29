@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <!--  1. 配置数据源-->
+  <bean id="springJDBC_datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <!--  驱动-->
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <!--  URL-->
+    <property name="url" value="jdbc:mysql://acmaker.vip:3306/javaTest"/>
+    <!--  用户名-->
+    <property name="username" value="javaTest"/>
+    <!--  密码-->
+    <property name="password" value="javaTest"/>
+  </bean>
+  <!--  2. 配置 JDBC模板-->
+  <bean id="springJDBC_jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <property name="dataSource" ref="springJDBC_datasource"/>
+  </bean>
+  <!--  3. 配置注入类-->
+  <bean id="springJDBC_accountDao" class="com.syousui.springDB.dao.impl.AccountDaoImpl">
+    <property name="springJDBC_jdbcTemplate" ref="springJDBC_jdbcTemplate" />
+  </bean>
+</beans>

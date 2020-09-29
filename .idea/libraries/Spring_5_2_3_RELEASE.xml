@@ -20,6 +20,7 @@
       <root url="jar://$PROJECT_DIR$/lib/spring-context-5.2.3.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-test-5.2.3.RELEASE.jar!/" />
       <root url="jar://E:/00 Download/aspectjweaver-1.9.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.8.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
