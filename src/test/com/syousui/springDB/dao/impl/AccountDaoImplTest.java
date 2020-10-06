@@ -103,5 +103,33 @@ public class AccountDaoImplTest {
         }
     }
 
+    /**
+     * Method: transfer(String outUser, String inUser, Double money)
+     */
+    @Test
+    public void testTransfer ( ) throws Exception {
+        // 调用实例中的转账方法
+        accountDao.transfer_xml(
+                "Jack",
+                "Rose",
+                100.0
+        );
+        // 输出提示信息
+        System.out.println( "转账成功！" );
+    }
 
-} 
+    /**
+     * Method: transfer_annotation(String outUser, String inUser, Double money)
+     */
+    @Test
+    public void testTransfer_annotation ( ) throws Exception {
+        // 调用实例中的转账方法
+        accountDao.transfer_annotation(
+                "Jack",
+                "Rose",
+                100.0
+        );
+        // 输出提示信息
+        System.out.println( "转账成功！" );
+    }
+}
