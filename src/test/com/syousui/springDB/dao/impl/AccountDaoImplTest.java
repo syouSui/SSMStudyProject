@@ -25,7 +25,7 @@ public class AccountDaoImplTest {
     @Before
     public void before ( ) throws Exception {
         applicationContext = new ClassPathXmlApplicationContext( "springJDBC.xml" );
-        accountDao = (AccountDao) applicationContext.getBean( "springJDBC_accountDao" );
+        accountDao = applicationContext.getBean( "springJDBC_accountDao", AccountDao.class );
     }
 
     @After
@@ -45,8 +45,7 @@ public class AccountDaoImplTest {
      */
     @Test
     public void testAddAccount ( ) throws Exception {
-        Account account = new Account( "tom", 1000.00 );
-        int num = accountDao.addAccount( account );
+        int num = accountDao.addAccount( new Account( "tom", 1000.00 ) );
         if ( num > 0 ) {
             System.out.println( "成功插入了" + num + "条数据！" );
         } else {
@@ -59,9 +58,8 @@ public class AccountDaoImplTest {
      */
     @Test
     public void testUpdateAccount ( ) throws Exception {
-        Account account = new Account( 1, "tom", 2000.00 );
         // 执行updateAccount()方法，并获取返回结果
-        int num = accountDao.updateAccount( account );
+        int num = accountDao.updateAccount( new Account( 1, "tom", 2000.00 ) );
         if ( num > 0 ) {
             System.out.println( "成功修改了" + num + "条数据！" );
         } else {
@@ -89,8 +87,7 @@ public class AccountDaoImplTest {
     @Test
     public void testFindAccountById ( ) throws Exception {
         // 执行findAccountById()方法
-        Account account = accountDao.findAccountById( 1 );
-        System.out.println( account );
+        System.out.println( accountDao.findAccountById( 1 ) );
     }
 
     /**

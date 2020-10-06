@@ -22,6 +22,7 @@ public class AccountDaoImpl implements AccountDao {
     public void setJdbcTemplate ( JdbcTemplate springJDBC_jdbcTemplate ) {
         this.springJDBC_jdbcTemplate = springJDBC_jdbcTemplate;
     }
+
     // 添加账户
     public int addAccount ( Account account ) {
         // 定义SQL
