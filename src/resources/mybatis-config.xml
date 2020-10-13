@@ -25,5 +25,6 @@
   <!-- 2. 配置Mapper的位置 -->
   <mappers>
     <mapper resource="com/syousui/mybatis/mapper/CustomerMapper.xml"/>
+    <package name="com.syousui.mybatis.mapper"/>
   </mappers>
 </configuration>
