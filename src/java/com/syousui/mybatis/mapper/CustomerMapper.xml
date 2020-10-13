@@ -5,43 +5,36 @@
 <mapper namespace="com.syousui.mybatis.mapper.CustomerMapper">
   <!--全查-->
   <select id="findAll"
-          resultType="com.syousui.mybatis.pojo.Customer">
+          resultType="customer">
     select * from t_customer where 1=1
   </select>
 
   <!--根据客户编号获取客户信息 -->
-  <select id="findCustomerById"
-          parameterType="Integer"
-          resultType="com.syousui.mybatis.pojo.Customer">
+  <select id="findCustomerById" parameterType="Integer" resultType="customer">
 		select * from t_customer where id = #{id}
 	</select>
 
   <!--根据客户名模糊查询客户信息列表-->
-  <select id="findCustomerByName"
-          parameterType="String"
-          resultType="com.syousui.mybatis.pojo.Customer">
+  <select id="findCustomerByName" parameterType="String" resultType="customer">
     <!-- select * from t_customer where username like '%${value}%' -->
     select * from t_customer where username like concat('%',#{value},'%')
   </select>
 
   <!-- 添加客户信息 -->
-  <insert id="insertCustomer"
-          parameterType="com.syousui.mybatis.pojo.Customer">
+  <insert id="insertCustomer" parameterType="customer">
 	    insert into t_customer(username,jobs,phone)
 	    values(#{username},#{jobs},#{phone})
 	</insert>
 
   <!-- 更新客户信息 -->
-  <update id="updateCustomer"
-          parameterType="com.syousui.mybatis.pojo.Customer">
+  <update id="updateCustomer" parameterType="customer">
 	    update t_customer set
 	    username=#{username},jobs=#{jobs},phone=#{phone}
 	    where id=#{id}
 	</update>
 
   <!-- 删除客户信息 -->
-  <delete id="deleteCustomer"
-          parameterType="Integer">
+  <delete id="deleteCustomer" parameterType="Integer">
 	    delete from t_customer where id=#{id}
 	</delete>
 </mapper>

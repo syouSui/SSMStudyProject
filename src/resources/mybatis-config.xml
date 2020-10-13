@@ -2,6 +2,11 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+  <!-- 加载数据库配置文件 -->
+  <properties resource="db.properties"/>
+  <typeAliases>
+    <package name="com.syousui.mybatis.pojo" />
+  </typeAliases>
   <!--1.配置环境 ，默认的环境id为mysql-->
   <environments default="mysql">
     <!--1.2.配置id为mysql的数据库环境 -->
@@ -10,10 +15,10 @@
       <transactionManager type="JDBC"/>
       <!-- 数据库连接池 -->
       <dataSource type="POOLED">
-        <property name="driver" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://acmaker.vip:3306/javaTest"/>
-        <property name="username" value="javaTest"/>
-        <property name="password" value="javaTest"/>
+        <property name="driver" value="${db.driver}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
       </dataSource>
     </environment>
   </environments>

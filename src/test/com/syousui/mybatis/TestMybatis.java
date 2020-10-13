@@ -26,15 +26,15 @@ import com.syousui.mybatis.pojo.Customer;
  */
 public class TestMybatis {
     public SqlSessionFactory sqlSessionFactory;
+    // SqlSession 线程不安全, 绝不能作为类成员, 但此处为测试类, 每个方法单个运行, 注意!!!
     public SqlSession sqlSession;
 
     @Before
     public void before ( ) throws Exception {
         // 根据配置文件构建 SqlSessionFactory
-        sqlSessionFactory =
-                new SqlSessionFactoryBuilder( ).build(
-                        Resources.getResourceAsStream( "mybatis-config.xml" )
-                );
+        sqlSessionFactory = new SqlSessionFactoryBuilder( ).build(
+                Resources.getResourceAsStream( "mybatis-config.xml" )
+        );
         // 通过 SqlSessionFactory 创建 SqlSession
         sqlSession = sqlSessionFactory.openSession( );
 //        // 1、读取配置文件
