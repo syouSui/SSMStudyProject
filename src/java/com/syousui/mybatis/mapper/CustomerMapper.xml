@@ -3,6 +3,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace表示命名空间 -->
 <mapper namespace="com.syousui.mybatis.mapper.CustomerMapper">
+  <!--全查-->
+  <select id="findAll" resultType="com.syousui.mybatis.pojo.Customer">
+    select * from t_customer where 1=1
+  </select>
+
   <!--根据客户编号获取客户信息 -->
   <select id="findCustomerById" parameterType="Integer"
           resultType="com.syousui.mybatis.pojo.Customer">
@@ -17,7 +22,7 @@
   </select>
 
   <!-- 添加客户信息 -->
-  <insert id="addCustomer" parameterType="com.syousui.mybatis.pojo.Customer">
+  <insert id="insertCustomer" parameterType="com.syousui.mybatis.pojo.Customer">
 	    insert into t_customer(username,jobs,phone)
 	    values(#{username},#{jobs},#{phone})
 	</insert>

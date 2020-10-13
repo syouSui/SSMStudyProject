@@ -11,6 +11,11 @@ public class Customer {
 
     public Customer ( ) {
     }
+    public Customer ( String username, String jobs, String phone ) {
+        this.username = username;
+        this.jobs = jobs;
+        this.phone = phone;
+    }
     public Customer ( Integer id, String username, String jobs, String phone ) {
         this.id = id;
         this.username = username;

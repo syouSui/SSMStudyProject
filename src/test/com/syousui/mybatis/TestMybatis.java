@@ -7,6 +7,8 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import com.syousui.mybatis.pojo.Customer;
 
@@ -23,27 +25,62 @@ import com.syousui.mybatis.pojo.Customer;
  * 入门程序测试类
  */
 public class TestMybatis {
+    public SqlSessionFactory sqlSessionFactory;
+    public SqlSession sqlSession;
+
+    @Before
+    public void before ( ) throws Exception {
+        // 根据配置文件构建 SqlSessionFactory
+        sqlSessionFactory =
+                new SqlSessionFactoryBuilder( ).build(
+                        Resources.getResourceAsStream( "mybatis-config.xml" )
+                );
+        // 通过 SqlSessionFactory 创建 SqlSession
+        sqlSession = sqlSessionFactory.openSession( );
+//        // 1、读取配置文件
+//        InputStream inputStream =
+//                Resources.getResourceAsStream( "mybatis-config.xml" );
+//        // 2、根据配置文件构建 SqlSessionFactory
+//        SqlSessionFactory sqlSessionFactory =
+//                new SqlSessionFactoryBuilder( ).build( inputStream );
+//        // 3、通过 SqlSessionFactory 创建 SqlSession
+//        SqlSession sqlSession = sqlSessionFactory.openSession( );
+    }
+
+    @After
+    public void after ( ) throws Exception {
+        // 关闭SqlSession
+        sqlSession.close( );
+    }
+
+    /**
+     * 根据客户编号查询客户信息
+     */
+    @Test
+    public void findAllTest ( ) throws Exception {
+        // SqlSession 执行映射文件中定义的 SQL，并返回映射结果
+        List<Customer> customers = sqlSession.selectList(
+                "com.syousui.mybatis.mapper.CustomerMapper.findAll"
+        );
+        // 打印输出结果集
+        for ( Customer customer : customers ) {
+            System.out.println( customer );
+        }
+    }
+
+
     /**
      * 根据客户编号查询客户信息
      */
     @Test
     public void findCustomerByIdTest ( ) throws Exception {
-        // 1、读取配置文件
-        String resource = "mybatis-config.xml";
-        InputStream inputStream =
-                Resources.getResourceAsStream( resource );
-        // 2、根据配置文件构建SqlSessionFactory
-        SqlSessionFactory sqlSessionFactory =
-                new SqlSessionFactoryBuilder( ).build( inputStream );
-        // 3、通过SqlSessionFactory创建SqlSession
-        SqlSession sqlSession = sqlSessionFactory.openSession( );
-        // 4、SqlSession执行映射文件中定义的SQL，并返回映射结果
-        Customer customer = sqlSession.selectOne( "com.syousui.mybatis.mapper"
-                + ".CustomerMapper.findCustomerById", 1 );
+        // SqlSession 执行映射文件中定义的 SQL，并返回映射结果
+        Customer customer = sqlSession.selectOne(
+                "com.syousui.mybatis.mapper.CustomerMapper.findCustomerById",
+                1
+        );
         // 打印输出结果
         System.out.println( customer.toString( ) );
-        // 5、关闭SqlSession
-        sqlSession.close( );
     }
 
     /**
@@ -51,57 +88,35 @@ public class TestMybatis {
      */
     @Test
     public void findCustomerByNameTest ( ) throws Exception {
-        // 1、读取配置文件
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream( resource );
-        // 2、根据配置文件构建SqlSessionFactory
-        SqlSessionFactory sqlSessionFactory =
-                new SqlSessionFactoryBuilder( ).build( inputStream );
-        // 3、通过SqlSessionFactory创建SqlSession
-        SqlSession sqlSession = sqlSessionFactory.openSession( );
-        // 4、SqlSession执行映射文件中定义的SQL，并返回映射结果
-        List<Customer> customers = sqlSession.selectList( "com.syousui.mybatis.mapper"
-                + ".CustomerMapper.findCustomerByName", "j" );
+        // SqlSession 执行映射文件中定义的 SQL，并返回映射结果
+        List<Customer> customers = sqlSession.selectList(
+                "com.syousui.mybatis.mapper.CustomerMapper.findCustomerByName",
+                "j"
+        );
+        // 打印输出结果集
         for ( Customer customer : customers ) {
-            //打印输出结果集
             System.out.println( customer );
         }
-        // 5、关闭SqlSession
-        sqlSession.close( );
     }
 
     /**
      * 添加客户
      */
     @Test
-    public void addCustomerTest ( ) throws Exception {
-        // 1、读取配置文件
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream( resource );
-        // 2、根据配置文件构建SqlSessionFactory
-        SqlSessionFactory sqlSessionFactory =
-                new SqlSessionFactoryBuilder( ).build( inputStream );
-        // 3、通过SqlSessionFactory创建SqlSession
-        SqlSession sqlSession = sqlSessionFactory.openSession( );
-        // 4、SqlSession执行添加操作
-        // 4.1创建Customer对象，并向对象中添加数据
-        Customer customer = new Customer( );
-        customer.setUsername( "rose" );
-        customer.setJobs( "student" );
-        customer.setPhone( "13333533092" );
-        // 4.2执行SqlSession的插入方法，返回的是SQL语句影响的行数
-        int rows = sqlSession.insert( "com.syousui.mybatis.mapper"
-                + ".CustomerMapper.addCustomer", customer );
+    public void insertCustomerTest ( ) throws Exception {
+        // 执行SqlSession的插入方法，返回的是SQL语句影响的行数
+        int num = sqlSession.insert(
+                "com.syousui.mybatis.mapper.CustomerMapper.insertCustomer",
+                new Customer( "rose", "student", "13333533092" )
+        );
         // 4.3通过返回结果判断插入操作是否执行成功
-        if ( rows > 0 ) {
-            System.out.println( "您成功插入了" + rows + "条数据！" );
+        if ( num > 0 ) {
+            System.out.println( "您成功插入了" + num + "条数据！" );
         } else {
             System.out.println( "执行插入操作失败！！！" );
         }
-        // 4.4提交事务
+        // 提交事务
         sqlSession.commit( );
-        // 5、关闭SqlSession
-        sqlSession.close( );
     }
 
     /**
@@ -109,34 +124,19 @@ public class TestMybatis {
      */
     @Test
     public void updateCustomerTest ( ) throws Exception {
-        // 1、读取配置文件
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream( resource );
-        // 2、根据配置文件构建SqlSessionFactory
-        SqlSessionFactory sqlSessionFactory =
-                new SqlSessionFactoryBuilder( ).build( inputStream );
-        // 3、通过SqlSessionFactory创建SqlSession
-        SqlSession sqlSession = sqlSessionFactory.openSession( );
-        // 4、SqlSession执行更新操作
-        // 4.1创建Customer对象，对对象中的数据进行模拟更新
-        Customer customer = new Customer( );
-        customer.setId( 4 );
-        customer.setUsername( "rose" );
-        customer.setJobs( "programmer" );
-        customer.setPhone( "13311111111" );
-        // 4.2执行SqlSession的更新方法，返回的是SQL语句影响的行数
-        int rows = sqlSession.update( "com.syousui.mybatis.mapper"
-                + ".CustomerMapper.updateCustomer", customer );
-        // 4.3通过返回结果判断更新操作是否执行成功
-        if ( rows > 0 ) {
-            System.out.println( "您成功修改了" + rows + "条数据！" );
+        // 执行SqlSession的更新方法，返回的是SQL语句影响的行数
+        int num = sqlSession.update(
+                "com.syousui.mybatis.mapper.CustomerMapper.updateCustomer",
+                new Customer( 4, "rose", "programmer", "13311111111" )
+        );
+        // 通过返回结果判断更新操作是否执行成功
+        if ( num > 0 ) {
+            System.out.println( "您成功修改了" + num + "条数据！" );
         } else {
             System.out.println( "执行修改操作失败！！！" );
         }
-        // 4.4提交事务
+        // 提交事务
         sqlSession.commit( );
-        // 5、关闭SqlSession
-        sqlSession.close( );
     }
 
     /**
@@ -144,28 +144,19 @@ public class TestMybatis {
      */
     @Test
     public void deleteCustomerTest ( ) throws Exception {
-        // 1、读取配置文件
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream( resource );
-        // 2、根据配置文件构建SqlSessionFactory
-        SqlSessionFactory sqlSessionFactory =
-                new SqlSessionFactoryBuilder( ).build( inputStream );
-        // 3、通过SqlSessionFactory创建SqlSession
-        SqlSession sqlSession = sqlSessionFactory.openSession( );
-        // 4、SqlSession执行删除操作
-        // 4.1执行SqlSession的删除方法，返回的是SQL语句影响的行数
-        int rows = sqlSession.delete( "com.syousui.mybatis.mapper"
-                + ".CustomerMapper.deleteCustomer", 4 );
-        // 4.2通过返回结果判断删除操作是否执行成功
-        if ( rows > 0 ) {
-            System.out.println( "您成功删除了" + rows + "条数据！" );
+        // 执行SqlSession的删除方法，返回的是SQL语句影响的行数
+        int num = sqlSession.delete(
+                "com.syousui.mybatis.mapper.CustomerMapper.deleteCustomer",
+                4
+        );
+        // 通过返回结果判断删除操作是否执行成功
+        if ( num > 0 ) {
+            System.out.println( "您成功删除了" + num + "条数据！" );
         } else {
             System.out.println( "执行删除操作失败！！！" );
         }
-        // 4.3提交事务
+        // 提交事务
         sqlSession.commit( );
-        // 5、关闭SqlSession
-        sqlSession.close( );
     }
 
 }
