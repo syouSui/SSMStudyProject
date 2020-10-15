@@ -3,19 +3,45 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace表示命名空间 -->
 <mapper namespace="com.syousui.mybatis.mapper.CustomerMapper">
+
   <!-- custom 为别名, 详见 mybatis-config.xml 文件 -->
   <!--全查-->
   <select id="findAll" resultType="customer">
     select * from t_customer where 1=1
   </select>
 
-  <!--根据客户编号获取客户信息 -->
+  <!--根据客户编号获取客户信息 way1-->
+  <!--  <select id="findCustomerById" parameterType="Integer" resultType="customer">-->
+  <!--		select * from t_customer where id = #{id}-->
+  <!--	</select>-->
+
+  <!--根据客户编号获取客户信息 way2-->
+  <!--定义表的前缀名 -->
+  <sql id="tablename"> ${prefix}customer </sql>
+  <!--定义要查询的表 -->
+  <sql id="someinclude">from
+    <include refid="${include_target}"/>
+  </sql>
+  <!--定义查询列 -->
+  <sql id="customerColumns"> id,username,jobs,phone </sql>
+  <!--根据id查询客户信息 -->
   <select id="findCustomerById" parameterType="Integer" resultType="customer">
-		select * from t_customer where id = #{id}
-	</select>
+    select
+    <include refid="customerColumns"/>
+    <include refid="someinclude">
+      <property name="prefix" value="t_"/>
+      <property name="include_target" value="tablename"/>
+    </include>
+    where id = #{id}
+  </select>
+
+  <!-- 按用户名查询 -->
+  <select id="findCustomerByName" parameterType="String" resultType="customer">
+    select * from t_customer where username=#{username}
+  </select>
 
   <!--根据客户名模糊查询客户信息列表-->
-  <select id="findCustomerByName" parameterType="String" resultType="customer">
+  <select id="findCustomerByName_vague" parameterType="String" resultType="customer">
     <!-- select * from t_customer where username like '%${value}%' -->
     select * from t_customer where username like concat('%',#{value},'%')
   </select>
@@ -37,4 +63,6 @@
   <delete id="deleteCustomer" parameterType="Integer">
 	    delete from t_customer where id=#{id}
 	</delete>
+
+
 </mapper>

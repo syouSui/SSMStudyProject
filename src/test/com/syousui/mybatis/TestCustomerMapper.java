@@ -24,7 +24,7 @@ import com.syousui.mybatis.pojo.Customer;
 /**
  * 入门程序测试类
  */
-public class TestMybatis {
+public class TestCustomerMapper {
     public SqlSessionFactory sqlSessionFactory;
     // SqlSession 线程不安全, 绝不能作为类成员, 但此处为测试类, 每个方法单个运行, 注意!!!
     public SqlSession sqlSession;
@@ -84,13 +84,29 @@ public class TestMybatis {
     }
 
     /**
-     * 根据用户名称来模糊查询用户信息列表
+     * 根据用户名称查询用户信息列表
      */
     @Test
     public void findCustomerByNameTest ( ) throws Exception {
         // SqlSession 执行映射文件中定义的 SQL，并返回映射结果
         List<Customer> customers = sqlSession.selectList(
                 "com.syousui.mybatis.mapper.CustomerMapper.findCustomerByName",
+                "jack"
+        );
+        // 打印输出结果集
+        for ( Customer customer : customers ) {
+            System.out.println( customer );
+        }
+    }
+
+    /**
+     * 根据用户名称来模糊查询用户信息列表
+     */
+    @Test
+    public void findCustomerByName_vagueTest ( ) throws Exception {
+        // SqlSession 执行映射文件中定义的 SQL，并返回映射结果
+        List<Customer> customers = sqlSession.selectList(
+                "com.syousui.mybatis.mapper.CustomerMapper.findCustomerByName_vague",
                 "j"
         );
         // 打印输出结果集
