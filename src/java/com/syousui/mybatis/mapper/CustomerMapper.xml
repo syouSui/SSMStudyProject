@@ -76,31 +76,31 @@
   <!--    </if>-->
   <!--  </select>-->
 
-  <!--   <where>元素 -->
-  <!--  <select id="findCustomerByNameAndJobs" parameterType="customer" resultType="customer">-->
-  <!--    select * from t_customer-->
-  <!--    <where>-->
-  <!--      <if test="username !=null and username !=''">-->
-  <!--        and username like concat('%',#{username},'%')-->
-  <!--      </if>-->
-  <!--      <if test="jobs !=null and jobs !=''">-->
-  <!--        and jobs= #{jobs}-->
-  <!--      </if>-->
-  <!--    </where>-->
-  <!--  </select>-->
-
-  <!-- <trim>元素 -->
+  <!--     <where>元素 -->
   <select id="findCustomerByNameAndJobs" parameterType="customer" resultType="customer">
     select * from t_customer
-    <trim prefix="where" prefixOverrides="and">
+    <where>
       <if test="username !=null and username !=''">
-        and username like concat('%',#{username}, '%')
+        and username like concat('%',#{username},'%')
       </if>
       <if test="jobs !=null and jobs !=''">
         and jobs= #{jobs}
       </if>
-    </trim>
+    </where>
   </select>
+
+  <!-- <trim>元素 -->
+  <!--  <select id="findCustomerByNameAndJobs" parameterType="customer" resultType="customer">-->
+  <!--    select * from t_customer-->
+  <!--    <trim prefix="where" prefixOverrides="and">-->
+  <!--      <if test="username !=null and username !=''">-->
+  <!--        and username like concat('%',#{username}, '%')-->
+  <!--      </if>-->
+  <!--      <if test="jobs !=null and jobs !=''">-->
+  <!--        and jobs= #{jobs}-->
+  <!--      </if>-->
+  <!--    </trim>-->
+  <!--  </select>-->
 
   <!--<choose>(<when>、<otherwise>)元素使用 -->
   <select id="findCustomerByNameOrJobs" parameterType="customer" resultType="customer">

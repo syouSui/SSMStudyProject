@@ -183,22 +183,14 @@ public class TestCustomerMapper {
      */
     @Test
     public void findCustomerByNameAndJobsTest ( ) {
-        // 创建Customer对象，封装需要组合查询的条件
-        Customer customer = new Customer( );
-        customer.setUsername( "jack" );
-//		customer.setJobs("teacher");
-        // 执行SqlSession的查询方法，返回结果集
+        Customer customer = new Customer( "jack", "teacher" );
         List<Customer> customers = sqlSession.selectList(
                 "com.syousui.mybatis.mapper.CustomerMapper.findCustomerByNameAndJobs",
                 customer
         );
-        // 输出查询结果信息
-        for ( Customer customer2 : customers ) {
-            // 打印输出结果
-            System.out.println( customer2 );
+        for ( Customer cus : customers ) {
+            System.out.println( cus );
         }
-        // 关闭SqlSession
-        sqlSession.close( );
     }
 
     /**
@@ -211,8 +203,8 @@ public class TestCustomerMapper {
                 "com.syousui.mybatis.mapper.CustomerMapper.findCustomerByNameOrJobs",
                 customer
         );
-        for ( Customer customer2 : customers ) {
-            System.out.println( customer2 );
+        for ( Customer cus : customers ) {
+            System.out.println( cus );
         }
     }
 
@@ -221,16 +213,13 @@ public class TestCustomerMapper {
      */
     @Test
     public void updateCustomer_setTest ( ) {
-        // 创建Customer对象，并向对象中添加数据
-        Customer customer = new Customer( );
+        Customer customer = new Customer(  );
         customer.setId( 3 );
         customer.setPhone( "13311111234" );
-        // 执行SqlSession的更新方法，返回的是SQL语句影响的行数
         int rows = sqlSession.update(
                 "com.syousui.mybatis.mapper.CustomerMapper.updateCustomer_set",
                 customer
         );
-        // 通过返回结果判断更新操作是否执行成功
         if ( rows > 0 ) {
             System.out.println( "您成功修改了" + rows + "条数据！" );
         } else {
@@ -265,8 +254,8 @@ public class TestCustomerMapper {
                 "com.syousui.mybatis.mapper.CustomerMapper.findCustomerByName_bind",
                 customer
         );
-        for ( Customer customer2 : customers ) {
-            System.out.println( customer2 );
+        for ( Customer cus : customers ) {
+            System.out.println( cus );
         }
     }
 
