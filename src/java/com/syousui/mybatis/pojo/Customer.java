@@ -11,6 +11,13 @@ public class Customer {
 
     public Customer ( ) {
     }
+    public Customer ( String username ) {
+        this.username = username;
+    }
+    public Customer ( String username, String jobs ) {
+        this.username = username;
+        this.jobs = jobs;
+    }
     public Customer ( String username, String jobs, String phone ) {
         this.username = username;
         this.jobs = jobs;
