@@ -75,7 +75,7 @@ public class MybatisAssociatedTest {
         SqlSession session = MybatisUtils.getSession( );
         // 2、查询id为1的订单中的商品信息
         Orders orders = session.selectOne(
-                "com.syousui.associationMapping.mapper.OrdersMapper.findOrdersWithProduct",
+                "com.syousui.associationMapping.mapper.OrdersMapper.findOrdersWithProduct2",
                 1
         );
         // 3、输出查询结果信息

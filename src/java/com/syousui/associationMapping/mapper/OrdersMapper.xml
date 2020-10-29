@@ -22,7 +22,7 @@
   <select id="findOrdersWithProduct2"
           parameterType="Integer"
           resultMap="OrdersWithProductResult2">
-	    select o.*, p.id as pid, p.name, p.price
+	    select o.*, p.id, p.name, p.price
 	    from tb_orders o, tb_product p, tb_ordersitem  oi
 	    WHERE oi.orders_id = o.id and oi.product_id = p.id and o.id = #{id}
 	</select>
