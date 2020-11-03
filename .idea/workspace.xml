@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d1e482ca-6fa9-417a-b58d-7740155df868" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/$PROJECT_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/dictionaries/syouSui.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/junitgenerator-prj-settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/libraries/Spring_5_2_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/SpringStudyProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/ant-1.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/ant-launcher-1.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/aopalliance-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/asm-5.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/cglib-3.2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/javassist-3.21.0-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/log4j-1.2.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/log4j-api-2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/log4j-core-2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/mybatis-3.4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/mysql-connector-java-5.1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/ognl-3.1.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/slf4j-api-1.7.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/slf4j-log4j12-1.7.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-aop-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-aspects-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-beans-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-context-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-context-support-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-core-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-expression-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-instrument-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-jdbc-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-jms-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-messaging-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-orm-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-oxm-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-test-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/lib/spring-tx-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/aspectJ_base_annotation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/aspectJ_base_xml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/associationMapping.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/baseAnnotation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/baseXml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/com/syousui/associationMapping/mapper/IdCardMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/com/syousui/associationMapping/mapper/OrdersMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/com/syousui/associationMapping/mapper/PersonMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/com/syousui/associationMapping/mapper/ProductMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/com/syousui/associationMapping/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/com/syousui/mybatis/mapper/CustomerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/com/syousui/mybatis/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/db.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/instance.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/springAop.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/out/production/SpringStudyProject/springJDBC.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/annotation/controller/AnnotationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/annotation/dao/AnnotationDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/annotation/dao/impl/AnnotationDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/annotation/service/AnnotationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/annotation/service/impl/AnnotationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/CglibProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/JdkProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/MyAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/aspectJ/base_annotation/MyAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/aspectJ/base_annotation/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/aspectJ/base_annotation/dao/impl/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/aspectJ/base_xml/MyAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/aspectJ/base_xml/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/aspectJ/base_xml/dao/impl/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/aop/springAop/MyAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/mapper/IdCardMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/mapper/OrdersMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/mapper/PersonMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/mapper/ProductMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/pojo/IdCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/pojo/Orders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/pojo/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/pojo/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/pojo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/associationMapping/utils/MybatisUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/di/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/di/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/instance/Bean1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/instance/Bean2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/instance/Bean3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/instance/DynamicFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/instance/StaticFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/ioc/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/ioc/impl/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/mybatis/mapper/CustomerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/mybatis/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/mybatis/pojo/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/mybatis/pojo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/mybatis/utils/MybatisUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/springDB/dao/AccountDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/springDB/dao/impl/AccountDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/springDB/pojo/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/java/com/syousui/springDB/springJDBC/SpringJDBC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/aspectJ_base_annotation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/aspectJ_base_xml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/associationMapping.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/baseAnnotation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/baseXml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/db.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/instance.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/springAop.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/resources/springJDBC.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/annotation/TestAnnotation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/aop/TestAspectJ_base_annotation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/aop/TestAspectJ_base_xml.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/aop/TestProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/aop/TestSpringAop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/associationMapping/MybatisAssociatedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/di/TestDi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/instance/TestInstance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/ioc/TestIoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/mybatis/TestCustomerMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/mybatis/TestMybatisUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/mybatis/TestUserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/springDB/SpringJDBC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/springDB/dao/impl/AccountDaoImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/temp/t1/T1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStudyProject/src/test/com/syousui/temp/t2/T2.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../IDE/maven/apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jlCpRCisxtdTpWsFvHQvoghPkV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringAndMybatisStudyProject" />
+    <property name="project.structure.last.edited" value="项目" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1e482ca-6fa9-417a-b58d-7740155df868" name="默认的" comment="" />
+      <created>1604369473710</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604369473710</updated>
+      <workItem from="1604369481068" duration="18000" />
+      <workItem from="1604369558814" duration="13000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1604369568585">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1604369568585" />
+    <state x="440" y="114" key="SettingsEditor" timestamp="1604369495611">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1604369495611" />
+  </component>
+</project>
