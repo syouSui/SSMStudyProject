@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.3.xsd ">
+
+  <!--  1. 配置数据源-->
+  <bean id="springJDBC_datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <!--  驱动-->
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <!--  URL-->
+    <property name="url" value="jdbc:mysql://acmaker.vip:3306/javaTest"/>
+    <!--  用户名-->
+    <property name="username" value="javaTest"/>
+    <!--  密码-->
+    <property name="password" value="javaTest"/>
+  </bean>
+  <!--  2. 配置 JDBC模板-->
+  <bean id="springJDBC_jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <property name="dataSource" ref="springJDBC_datasource"/>
+  </bean>
+  <!--  3. 配置注入类-->
+  <bean id="springJDBC_accountDao" class="com.syousui.springDB.dao.impl.AccountDaoImpl">
+    <property name="springJDBC_jdbcTemplate" ref="springJDBC_jdbcTemplate"/>
+  </bean>
+  <!-- 4. 事务管理器, 依赖于数据源 -->
+  <bean id="transactionManager" class=
+    "org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="springJDBC_datasource"/>
+  </bean>
+  <!-- 5. 编写通知: 对事务进行增强(通知), 需要编写对切入点和具体执行事务细节 -->
+  <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    <tx:attributes>
+      <!-- name：*表示任意方法名称 -->
+      <tx:method name="*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+    </tx:attributes>
+  </tx:advice>
+  <!-- 6. 编写aop, 让spring自动对目标生成代理, 需要使用AspectJ的表达式 -->
+  <aop:config>
+    <!-- 切入点 -->
+    <aop:pointcut id="txPointCut" expression="execution(* com.syousui.springDB.dao.impl.*.*(..))"/>
+    <!-- 切面：将切入点与通知整合 -->
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+  </aop:config>
+
+  <!--  -->
+  <!-- 注解配置事务 -->
+  <!--  -->
+  <!-- 5.注册事务管理器驱动 -->
+  <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>
