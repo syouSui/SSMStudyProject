@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-4.3.xsd 
+  http://www.springframework.org/schema/mvc 
+  http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd 
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+  <!-- 定义组件扫描器，指定需要扫描的包 -->
+  <context:component-scan base-package="com.syousui.controller"/>
+  <!-- 配置注解驱动 -->
+  <mvc:annotation-driven/>
+
+  <!--配置静态资源的访问映射，此配置中的文件，将不被前端控制器拦截 -->
+  <mvc:resources location="/js/" mapping="/js/**"/>
+  <mvc:resources location="/css/" mapping="/css/**"/>
+  <mvc:resources location="/img/" mapping="/img/**"/>
+  <mvc:resources location="/" mapping="/*.html"/>
+  <!-- <mvc:default-servlet-handler /> -->
+
+  <!-- 配置拦截器 -->
+  <mvc:interceptors>
+    <!--使用bean直接定义在<mvc:interceptors>下面的拦截器将拦截所有请求-->
+    <bean class="com.syousui.interceptor.MyInterceptor"/>
+    <!-- 定义在<mvc:interceptor>下面的表示匹配指定路径的请求才进行拦截的 -->
+    <!-- 拦截器1 -->
+    <mvc:interceptor>
+      <mvc:mapping path="/**"/>
+      <bean class="com.syousui.interceptor.Interceptor1"/>
+    </mvc:interceptor>
+    <!-- 拦截器2 -->
+    <mvc:interceptor>
+      <mvc:mapping path="/hello"/>
+      <bean class="com.syousui.interceptor.Interceptor2"/>
+    </mvc:interceptor>
+  </mvc:interceptors>
+
+</beans>
