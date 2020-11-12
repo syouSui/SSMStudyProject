@@ -45,17 +45,20 @@
     <property name="configLocation" value="classpath:mybatis-config.xml"/>
   </bean>
 
+  <!-- Dao开发模式 -->
   <!--实例化Dao -->
   <bean id="customerDao" class="com.syousui.dao.impl.CustomerDaoImpl">
     <!-- 注入SqlSessionFactory对象实例-->
     <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
   </bean>
-  <!--  &lt;!&ndash;       Mapper代理开发（基于MapperFactoryBean） &ndash;&gt;-->
+
+  <!-- Mapper代理开发1( 基于MapperFactoryBean )-->
   <!--  <bean id="customerMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
   <!--    <property name="mapperInterface" value="com.syousui.mapper.CustomerMapper"/>-->
   <!--    <property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
   <!--  </bean>-->
-  <!--   Mapper代理开发（基于MapperScannerConfigurer） -->
+
+  <!-- Mapper开发模式2( 基于MapperScannerConfigurer ) -->
   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
     <property name="basePackage" value="com.syousui.mapper"/>
   </bean>

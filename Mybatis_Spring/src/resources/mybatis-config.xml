@@ -8,8 +8,9 @@
   </typeAliases>
   <!--配置Mapper的位置 -->
   <mappers>
+    <!--  Dao开发模式的mapper测试  -->
     <mapper resource="com/syousui/po/CustomerMapper.xml"/>
-    <!-- Mapper接口开发方式 -->
+    <!-- Mapper接口开发方式的mapper测试 -->
     <mapper resource="com/syousui/mapper/CustomerMapper.xml"/>
 
   </mappers>
