@@ -18,6 +18,8 @@
   <mvc:resources location="/css/" mapping="/css/**"/>
   <mvc:resources location="/img/" mapping="/img/**"/>
   <mvc:resources location="/" mapping="/*.html"/>
+  <mvc:resources location="/" mapping="/*.css"/>
+  <mvc:resources location="/" mapping="/*.js"/>
   <!-- <mvc:default-servlet-handler /> -->
 
   <!-- 配置拦截器 -->
