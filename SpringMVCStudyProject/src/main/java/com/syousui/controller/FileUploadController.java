@@ -21,16 +21,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * 文件上传
+ * 文件上传下载控制器
  */
 @Controller
 public class FileUploadController {
+
     /**
-     * 执行文件上传
+     * 文件上传控制
+     * @param personName 上传人名
+     * @param uploadFiles 上传的文件.
+     *                    注意 @RequestParam的参数一定要与表单中input的name一致!!!
+     * @param request
+     * @param response
+     * @throws IOException
      */
     @RequestMapping ( "/fileUpload" )
     public void handleFormUpload ( @RequestParam ( "person" ) String personName,
-                                   @RequestParam ( "uploadFiles" ) List<MultipartFile> uploadFiles,
+                                   @RequestParam ( "files" ) List<MultipartFile> uploadFiles,
                                    HttpServletRequest request,
                                    HttpServletResponse response ) throws IOException {
         // 判断所上传文件是否存在
@@ -38,11 +45,13 @@ public class FileUploadController {
             response.setContentType( "text/html" );
             response.setCharacterEncoding( "utf-8" );
             response.getWriter( ).println( "文件不能为空!请重新上传!" );
+            return;
         }
         //循环输出上传的文件
         for ( MultipartFile file : uploadFiles ) {
             // 设置上传文件的保存地址目录
-            File filePath = new File( request.getServletContext( ).getRealPath( "/upload/" ) );
+//            File filePath = new File( request.getServletContext( ).getRealPath( "/upload/" ) );
+            File filePath = new File( request.getServletContext( ).getRealPath( "/" ) + "upload/" );
             // 如果保存文件的地址不存在，就先创建目录
             if ( !filePath.exists( ) ) filePath.mkdirs( );
 
@@ -58,6 +67,13 @@ public class FileUploadController {
         response.getWriter( ).println( "文件上传成功!" );
     }
 
+    /**
+     * 文件下载控制
+     * @param fileName 文件名
+     * @param request 此参数仅仅是为了传递HTTP请求到下一个处理文件编码的函数.
+     * @return
+     * @throws IOException
+     */
     @RequestMapping ( "/download" )
     public ResponseEntity<byte[]> fileDownload ( String fileName, HttpServletRequest request ) throws IOException {
         // 创建该文件对象
@@ -80,8 +96,13 @@ public class FileUploadController {
                 HttpStatus.OK
         );
     }
+
     /**
      * 根据浏览器的不同进行编码设置，返回编码后的文件名
+     * @param fileName
+     * @param request
+     * @return
+     * @throws UnsupportedEncodingException
      */
     public String handleFilNameEncoding ( String fileName, HttpServletRequest request ) throws UnsupportedEncodingException {
         // IE不同版本User-Agent中出现的关键词

@@ -8,13 +8,12 @@
 <h1>This is index.html</h1>
 <div>
   <div id="uploadDemo">
-    <form action="/fileUpload"
-          method="post" enctype="multipart/form-data" onsubmit="return check()">
+    <form action="/fileUpload" method="post" enctype="multipart/form-data" onsubmit="return check()">
       <label for="person"> 上传人: </label>
       <input id="person" name="person" type="text"/> <br/>
-      <label for="file">请选择文件:</label>
-      <input id="file" name="uploadFile" type="file" multiple="multiple"/> <br/>
-      <input id="submitUpload" name="fileName" type="submit" value="上传"/>
+      <label for="files">请选择文件:</label>
+      <input id="files" name="files" type="file" multiple="multiple"/> <br/>
+      <input id="submitUpload" name="submitUpload" type="submit" value="上传"/>
     </form>
   </div>
   <br/>
@@ -26,13 +25,13 @@
 <script>
     // 判断是否填写上传人并已选择上传文件
     function check() {
-        const name = document.getElementById("name").value;
-        const file = document.getElementById("file").value;
-        if (name === "") {
+        const person = document.getElementById("person").value;
+        const files = document.getElementById("files").value;
+        if (person === "") {
             alert("请填写上传人");
             return false;
         }
-        if (file.length === 0 || file === "") {
+        if (files.length === 0 || files === "") {
             alert("请选择上传文件");
             return false;
         }
