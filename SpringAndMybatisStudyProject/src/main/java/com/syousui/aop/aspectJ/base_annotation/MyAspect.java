@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class MyAspect {
 
     // 定义切入点表达式
-    @Pointcut ( "execution(* com.syousui.aop.aspectJ.base_xml.dao.*.*(..))" )
+    @Pointcut ( "execution(* com.syousui.aop.aspectJ.base_annotation.dao.*.*(..))" )
     // 使用一个返回值为void 方法体为空的方法来命名切入点
     private void myPointCut () {};
 

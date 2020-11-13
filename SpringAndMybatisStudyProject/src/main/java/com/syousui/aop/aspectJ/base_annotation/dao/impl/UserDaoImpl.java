@@ -11,7 +11,8 @@ import org.springframework.stereotype.Repository;
  * @createTime : 2020-09-22 08:50:00 星期二
  * @Description : TODO
  */
-@Repository( "aspectJ_dao" )
+
+@Repository( "aspectJ_dao_base_annotation" )
 public class UserDaoImpl implements UserDao {
     @Override
     public void addUser ( ) {

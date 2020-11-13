@@ -15,7 +15,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestAspectJ_base_annotation {
     public static void main ( String[] args ) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext( "aspectJ_base_annotation.xml" );
-        UserDao userDao = applicationContext.getBean("aspectJ_dao", UserDao.class);
+        UserDao userDao = applicationContext.getBean("aspectJ_dao_base_annotation", UserDao.class);
         userDao.addUser();
     }
 }
