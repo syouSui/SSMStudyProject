@@ -14,12 +14,10 @@ public class DaoTest {
 
     @Test
     public void findCustomerByIdDaoTest ( ) {
-//	@Test
-//	public static void findCustomerByIdDaoTest(){
         ApplicationContext act = new ClassPathXmlApplicationContext( "applicationContext.xml" );
-        // 根据容器中Bean的id来获取指定的Bean
+//        根据容器中Bean的id来获取指定的Bean
         CustomerDao customerDao = (CustomerDao) act.getBean( "customerDao" );
-//	     CustomerDao customerDao = act.getBean(CustomerDao.class);
+//        CustomerDao customerDao = act.getBean( CustomerDao.class );
         Customer customer = customerDao.findCustomerById( 1 );
         System.out.println( customer );
     }
