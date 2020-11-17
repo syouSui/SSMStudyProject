@@ -13,7 +13,8 @@
     <td>编号</td> <td>名称</td> <td>职业</td> <td>电话</td>
   </tr>
   <tr>
-    <td>${customer.id}</td> <td>${customer.username}</td> <td>${customer.jobs}</td> <td>${customer.phone}</td> </tr>
+    <td>${customer.id}</td> <td>${customer.username}</td> <td>${customer.jobs}</td> <td>${customer.phone}</td>
+  </tr>
 </table>
 </body>
 </html>
